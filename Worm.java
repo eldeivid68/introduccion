@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+//Comentario para tarea de intro
+//hola
 /**
  * Write a description of class Worm here.
  * 
