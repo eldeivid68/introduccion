@@ -16,6 +16,7 @@ public class Crab extends Actor
         if (worm != null) { 
             getWorld().removeObject(worm);
             Greenfoot.playSound("eating.wav");
+            // Este es mi comentario para la tareaza
         }
     }    
 }
