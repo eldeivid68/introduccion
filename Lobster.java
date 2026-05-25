@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+//hola que tal, este es mi comentario -Tunchez
 /**
  * Write a description of class Lobster here.
  * 
