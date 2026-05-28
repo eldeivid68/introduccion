@@ -8,22 +8,41 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Lobster extends Actor
 {
-    /**
-     * Act - do whatever the Lobster wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
-        move(2);
-        if (Greenfoot.getRandomNumber(100) < 10) {
-            turn(Greenfoot.getRandomNumber(90) - 45);
-        }
-        if (isAtEdge()) {
+        move(4);
+        if (getX()-25<= 5 || getX()+25>= getWorld().getWidth()-5){
             turn(180);
         }
-        Actor crab = getOneObjectAtOffset(0, 0, Crab.class);
-        if (crab != null) {
-            getWorld().removeObject(crab);
-        }// Add your action code here.
+        Actor bullet;
+        bullet=new Bullet();
+        Actor bullet_2;
+        bullet_2=new Bullet_2();
+        Actor bullet_3;
+        bullet_3=new Bullet_3();
+        World world;
+        world=getWorld();
+        int random=Greenfoot.getRandomNumber(400);
+        if (random<10){
+            world.addObject(bullet,getX(),getY());
+            world.addObject(bullet_2,getX(),getY());
+            world.addObject(bullet_3,getX(),getY());
+            if (Greenfoot.getRandomNumber(10)==1){
+                turn(180);
+            }
+        }
+        else if(random<20){
+            world.addObject(bullet_2,getX(),getY());
+            world.addObject(bullet_3,getX(),getY());
+            if (Greenfoot.getRandomNumber(10)==1){
+                turn(180);
+            }
+        }
+        else if(random<30){
+            world.addObject(bullet,getX(),getY());
+            if (Greenfoot.getRandomNumber(10)==1){
+                turn(180);
+            }
+        }
     }
 }
