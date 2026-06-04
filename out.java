@@ -14,26 +14,6 @@ public class out extends Actor
      */
     public void act()
     {
-        Actor bullet;
-        Actor bullet_2;
-        Actor bullet_3;
-        bullet=getOneObjectAtOffset(0,0,Bullet.class);
-        bullet_2=getOneObjectAtOffset(0,0,Bullet_2.class);
-        bullet_3=getOneObjectAtOffset(0,0,Bullet_3.class);
-        if (bullet!=null){
-            World world;
-            world=getWorld();
-            world.removeObject(bullet);
-        }
-        if (bullet_2!=null){
-            World world;
-            world=getWorld();
-            world.removeObject(bullet_2);
-        }
-        if (bullet_3!=null){
-            World world;
-            world=getWorld();
-            world.removeObject(bullet_3);
-        }
+       
     }
 }

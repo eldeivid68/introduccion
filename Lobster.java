@@ -10,6 +10,11 @@ public class Lobster extends Actor
 {
     public void act()
     {
+        if(getWorld().getObjects(Crab.class).isEmpty())
+        {
+            return;
+        }
+        
         move(4);
         if (getX()-25<= 5 || getX()+25>= getWorld().getWidth()-5){
             turn(180);

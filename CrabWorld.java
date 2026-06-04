@@ -8,7 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CrabWorld extends World
 {
-
+    private progreso barra;
+    private int tiempo = 0;
+    private int tiempoMeta = 1800;
+    private int score = 0;
     /**
      * Constructor for objects of class CrabWorld.
      * 
@@ -17,6 +20,9 @@ public class CrabWorld extends World
     {    
         super(560, 560, 1); 
         prepare();
+        barra = new progreso();
+        addObject(barra,110,17);
+        showText("Score: " + score, 500, 15);
     }
     
     /**
@@ -35,5 +41,23 @@ public class CrabWorld extends World
                 addObject(out,x*50,550+y);
             }
         }
+    }
+    
+    public void act()
+    {
+        if(!getObjects(Crab.class).isEmpty())
+        {
+            tiempo++;
+    
+            double avance =
+                (double) tiempo / tiempoMeta;
+    
+            barra.actualizar(avance);
+        }
+        showText("Score: " + score, 500, 15);
+    }
+    public void sumarScore()
+    {
+        score++;
     }
 }
