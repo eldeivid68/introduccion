@@ -60,4 +60,13 @@ public class CrabWorld extends World
     {
         score++;
     }
+    public void gameOverr()
+    {
+        GreenfootImage fondo = getBackground();
+    
+        fondo.setColor(new Color(0,0,0,180));
+        fondo.fillRect(0,0,560,560);
+    
+        addObject(new gameOver(), 280, 280);
+    }
 }

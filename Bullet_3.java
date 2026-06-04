@@ -26,6 +26,7 @@ public class Bullet_3 extends Actor
             World world;
             world=getWorld();
             world.removeObject(crab);
+            ((CrabWorld)world).gameOverr();
             for(Bullet b : world.getObjects(Bullet.class))
             {
                 world.removeObject(b);
