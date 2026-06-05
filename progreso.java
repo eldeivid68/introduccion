@@ -15,7 +15,10 @@ public class progreso extends Actor
     {
         actualizar(0);
     }
-
+    public void setAncho(int nuevoAncho)
+    {
+        ancho = nuevoAncho;
+    }
     public void actualizar(double avance)
     {
         GreenfootImage img = new GreenfootImage(ancho, alto);
@@ -44,4 +47,5 @@ public class progreso extends Actor
 
         setImage(img);
     }
+    
 }
