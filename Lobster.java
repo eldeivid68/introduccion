@@ -20,11 +20,11 @@ public class Lobster extends Actor
             turn(180);
         }
         Actor bullet;
-        bullet=new Bullet();
+        bullet=new Bullet(90, 5);
         Actor bullet_2;
-        bullet_2=new Bullet_2();
+        bullet_2=new Bullet_2(110, 5);
         Actor bullet_3;
-        bullet_3=new Bullet_3();
+        bullet_3=new Bullet_3(70, 5);
         World world;
         world=getWorld();
         int random=Greenfoot.getRandomNumber(400);

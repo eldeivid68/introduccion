@@ -12,14 +12,18 @@ public class Bullet_2 extends Actor
      * Act - do whatever the Bullet_2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int z=1;
+    private int angulo;
+    private int velocidad;
+
+    public Bullet_2(int anguloInicial, int velocidadInicial)
+    {
+        angulo = anguloInicial;
+        velocidad = velocidadInicial;
+        setRotation(angulo);
+    }
     public void act()
     {
-        move(5);
-            while (z==1){
-                turn(110);
-                z=z-1;
-            }
+        move(velocidad);
         Actor crab;
         crab=getOneObjectAtOffset(0,0,Crab.class);
         if (crab!=null){
@@ -41,12 +45,37 @@ public class Bullet_2 extends Actor
             }
             return;
         }
-        if(getY() >= 520)
+        if(getY() > 550)      
         {
             World world;
             world=getWorld();
             ((CrabWorld)world).sumarScore();
             getWorld().removeObject(this);
+            return;
+        }
+        if(getY() < 10)           
+        {
+            World world;
+            world=getWorld();
+            ((CrabWorld)world).sumarScore();
+            getWorld().removeObject(this);
+            return;
+        }
+        if(getX() > 550)           
+        {
+            World world;
+            world=getWorld();
+            ((CrabWorld)world).sumarScore();
+            getWorld().removeObject(this);
+            return;
+        }
+        if(getX() < 10)           
+        {
+            World world;
+            world=getWorld();
+            ((CrabWorld)world).sumarScore();
+            getWorld().removeObject(this);
+            return;
         }
     }
 }

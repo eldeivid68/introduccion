@@ -1,14 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bullet extends Actor
 {
-    int z=1;
+    private int angulo;
+    private int velocidad;
+
+    public Bullet(int anguloInicial, int velocidadInicial)
+    {
+        angulo = anguloInicial;
+        velocidad = velocidadInicial;
+        setRotation(angulo);
+    }
+    
     public void act()
     {
-        move(5);
-            while (z==1){
-                turn(90);
-                z=z-1;
-            }
+        move(velocidad);
         Actor crab;
         crab=getOneObjectAtOffset(0,0,Crab.class);
         if (crab!=null){
@@ -30,12 +35,37 @@ public class Bullet extends Actor
             }
             return;
         }
-        if(getY() >= 520)
+        if(getY() > 550)           
         {
             World world;
             world=getWorld();
             ((CrabWorld)world).sumarScore();
             getWorld().removeObject(this);
+            return;
+        }
+        if(getY() < 10)           
+        {
+            World world;
+            world=getWorld();
+            ((CrabWorld)world).sumarScore();
+            getWorld().removeObject(this);
+            return;
+        }
+        if(getX() > 550)           
+        {
+            World world;
+            world=getWorld();
+            ((CrabWorld)world).sumarScore();
+            getWorld().removeObject(this);
+            return;
+        }
+        if(getX() < 10)           
+        {
+            World world;
+            world=getWorld();
+            ((CrabWorld)world).sumarScore();
+            getWorld().removeObject(this);
+            return;
         }
     }
 }

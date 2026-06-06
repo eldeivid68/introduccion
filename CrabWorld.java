@@ -134,8 +134,20 @@ public class CrabWorld extends World
     
         fondo.setColor(new Color(0,0,0,180));
         fondo.fillRect(0,0,560,560);
-    
+        
+        removeObjects(getObjects(BossFinal.class));
+
+        removeObjects(getObjects(Bullet.class));
+        
+        removeObjects(getObjects(Bullet_2.class));
+        
+        removeObjects(getObjects(Bullet_3.class));
+        
         addObject(new Victoria(score), 280, 280);
         victoria = true;
+    }
+    public double getAvance()
+    {
+        return (double) tiempo / tiempoMeta;
     }
 }

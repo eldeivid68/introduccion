@@ -17,4 +17,6 @@ comment6.params=
 comment6.target=void\ iniciarJefeFinal()
 comment7.params=
 comment7.target=void\ victoria()
-numComments=8
+comment8.params=
+comment8.target=double\ getAvance()
+numComments=9

@@ -14,6 +14,7 @@ public class Victoria extends Actor
      */
     public Victoria(int score)
     {
+        
         GreenfootImage img = new GreenfootImage(
             "VICTORIA\n\nScore Final: " + score + "\n\nGracias por jugar",
             40,
