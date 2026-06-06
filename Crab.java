@@ -12,34 +12,40 @@ public class Crab extends Actor
         new GreenfootImage("walkKnigth2.png");
     
     private int contadorAnimacion = 0;
+    private int velocidad =3;
     public void act() 
     {
         boolean moviendoseVertical = false;
         boolean moviendose = false;
         if (Greenfoot.isKeyDown("left")) 
         {  
-            move(-6); 
+            move(-velocidad); 
             setImage("leftKnight.png");
             moviendose = true;
         }
         if (Greenfoot.isKeyDown("right")) 
         { 
-            move(6);
+            move(velocidad);
             setImage("rightKnight.png");
             moviendose = true;
         }
         if(Greenfoot.isKeyDown("up"))
         {
-            setLocation(getX(), getY()-5);
+            setLocation(getX(), getY()-velocidad-1);
             moviendoseVertical = true;
         }
         
         if(Greenfoot.isKeyDown("down"))
         {
-            setLocation(getX(), getY()+5);
+            setLocation(getX(), getY()+velocidad-1);
             moviendoseVertical = true;
         }
-        
+        if(Greenfoot.isKeyDown("shift")){
+            velocidad=5;
+        }
+        else{
+            velocidad=3;
+        }
         if(moviendoseVertical)
         {
             contadorAnimacion++;
